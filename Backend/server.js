@@ -13,6 +13,11 @@ app.use(cors({
 }));
 app.use(express.json());
 
+// Add a root route
+app.get('/', (req, res) => {
+    res.json({ message: 'Server is running' });
+});
+
 // Initialize OpenAI
 const openai = new OpenAI({
     apiKey: process.env.OPENAI_API_KEY
@@ -39,7 +44,7 @@ app.post('/api/chat', async (req, res) => {
     }
 });
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
 }); 
