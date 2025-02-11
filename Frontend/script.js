@@ -203,7 +203,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Add this function to handle API calls
     async function callOpenAI(message, model = "gpt-3.5-turbo") {
         try {
-            const response = await fetch('YOUR_RENDER_API_URL/api/chat', {
+            const response = await fetch('https://ven-fork.onrender.com/api/chat', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
